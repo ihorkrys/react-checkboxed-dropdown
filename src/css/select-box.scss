@@ -1,4 +1,4 @@
-.react-select-box-container {
+.react-checkboxed-dropdown-container {
     position: relative;
     width: 240px;
     display: inline-block;
@@ -8,7 +8,7 @@
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
-.react-select-box {
+.react-checkboxed-dropdown {
     padding: 15px 0;
     display: inline-block;
     cursor: pointer;
@@ -18,12 +18,12 @@
     background-color: transparent;
 }
 
-.react-select-box:focus {
+.react-checkboxed-dropdown:focus {
     outline: 0;
     box-shadow: 0 0 4px #0493d1;
 }
 
-.react-select-box:before {
+.react-checkboxed-dropdown:before {
     content: " ";
     z-index: 1;
     position: absolute;
@@ -33,7 +33,7 @@
     border-left: 1px solid #cbd2d7;
 }
 
-.react-select-box:after {
+.react-checkboxed-dropdown:after {
     content: " ";
     position: absolute;
     z-index: 1;
@@ -44,15 +44,15 @@
     border-right: 5px solid transparent;
 }
 
-.react-select-box-label,
-.react-select-box-option {
+.react-checkboxed-dropdown-label,
+.react-checkboxed-dropdown-option {
     line-height: 16px;
     font-size: 12px;
     font-weight: bold;
     color: #7b8e9b;
 }
 
-.react-select-box-label {
+.react-checkboxed-dropdown-label {
     padding: 0 40px 0 20px;
     white-space: nowrap;
     overflow: hidden;
@@ -60,11 +60,11 @@
     color: #0493d1;
 }
 
-.react-select-box-empty .react-select-box-label {
+.react-checkboxed-dropdown-empty .react-checkboxed-dropdown-label {
     color: #7b8e9b;
 }
 
-.react-select-box-click-outside-layer {
+.react-checkboxed-dropdown-click-outside-layer {
     position: fixed;
     top: 0;
     left: 0;
@@ -73,7 +73,7 @@
     z-index: 2;
 }
 
-.react-select-box-clear {
+.react-checkboxed-dropdown-clear {
     position: absolute;
     top: 15px;
     right: 0;
@@ -86,7 +86,7 @@
 
 }
 
-.react-select-box-clear:before {
+.react-checkboxed-dropdown-clear:before {
     content: "×";
     position: absolute;
     top: 2px;
@@ -103,21 +103,21 @@
     text-align: center;
 }
 
-.react-select-box-clear:hover,
-.react-select-box-clear:focus {
+.react-checkboxed-dropdown-clear:hover,
+.react-checkboxed-dropdown-clear:focus {
     outline: 0;
 }
 
-.react-select-box-clear:hover:before,
-.react-select-box-clear:focus:before {
+.react-checkboxed-dropdown-clear:hover:before,
+.react-checkboxed-dropdown-clear:focus:before {
     background-color: #0493d1;
 }
 
-.react-select-box-hidden {
+.react-checkboxed-dropdown-hidden {
     display: none;
 }
 
-.react-select-box-options {
+.react-checkboxed-dropdown-options {
     margin: 2px 0 0;
     position: absolute;
     padding: 10px 0;
@@ -130,13 +130,13 @@
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
-.react-select-box-options-list {
+.react-checkboxed-dropdown-options-list {
     list-style: none outside;
     margin: 0;
     padding: 0;
 }
 
-.react-select-box-option {
+.react-checkboxed-dropdown-option {
     padding: 10px 20px;
     margin: 0;
     cursor: pointer;
@@ -145,21 +145,21 @@
     text-decoration: none;
 }
 
-.react-select-box-option:hover {
+.react-checkboxed-dropdown-option:hover {
     color: #0493d1;
     background-color: #f4f4f4;
 }
 
-.react-select-box-option-selected {
+.react-checkboxed-dropdown-option-selected {
     color: #cbd2d7;
 }
 
-.react-select-box-multi .react-select-box-option {
+.react-checkboxed-dropdown-multi .react-checkboxed-dropdown-option {
     padding-left: 42px;
     position: relative;
 }
 
-.react-select-box-multi .react-select-box-option:before {
+.react-checkboxed-dropdown-multi .react-checkboxed-dropdown-option:before {
     content: " ";
     position: absolute;
     line-height: 1;
@@ -175,22 +175,22 @@
     vertical-align: middle;
 }
 
-.react-select-box-multi .react-select-box-option-selected:before {
+.react-checkboxed-dropdown-multi .react-checkboxed-dropdown-option-selected:before {
     content: "✓";
 }
 
-.react-select-box-multi .react-select-box-option-selected {
+.react-checkboxed-dropdown-multi .react-checkboxed-dropdown-option-selected {
     color: #1f3344;
 }
 
-.react-select-box-option:focus,
-.react-select-box-option-focused {
+.react-checkboxed-dropdown-option:focus,
+.react-checkboxed-dropdown-option-focused {
     color: #0493d1;
     outline: 0;
     background-color: #dde2e5;
 }
 
-.react-select-box-close {
+.react-checkboxed-dropdown-close {
     color: #0493d1;
     text-transform: uppercase;
     background-color: transparent;
@@ -204,16 +204,16 @@
     outline: none;
 }
 
-.react-select-box-close:hover,
-.react-select-box-close:focus {
+.react-checkboxed-dropdown-close:hover,
+.react-checkboxed-dropdown-close:focus {
     text-decoration: underline;
 }
 
-.react-select-box-empty .react-select-box-close {
+.react-checkboxed-dropdown-empty .react-checkboxed-dropdown-close {
     color: #cbd2d7;
 }
 
-.react-select-box-native {
+.react-checkboxed-dropdown-native {
     position: absolute;
     left: -99999em;
 }

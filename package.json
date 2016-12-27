@@ -1,6 +1,6 @@
 {
   "name": "react-checkboxed-dropdown",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An accessible checkboxed select box component for React 15.",
   "main": "./main.js",
   "directories": {

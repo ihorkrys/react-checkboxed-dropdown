@@ -26,7 +26,7 @@ export default class SelectBox extends Component {
     this.clickingOption = false;
     this.blurTimeout = null;
     this.state = {
-      key: "react-select-box-" + ++keyInc,
+      key: "react-checkboxed-dropdown-" + ++keyInc,
       open: false,
       focusedIndex: -1,
       pendingValue: []
@@ -250,7 +250,7 @@ export default class SelectBox extends Component {
     const multiple = this.isMultiple();
     const empty = multiple ? null : <option key="" value="">No Selection</option>;
     const options = [empty, ...this.props.children];
-    return <div className="react-select-box-native">
+    return <div className="react-checkboxed-dropdown-native">
       <label>{this.props.label}</label>
       <select key={key} multiple={multiple}
               onKeyDown={e => e.stopPropagation()}
@@ -260,9 +260,9 @@ export default class SelectBox extends Component {
   }
 
   renderOptionMenu() {
-    let className = "react-select-box-options";
+    let className = "react-checkboxed-dropdown-options";
     if (!this.state.open) {
-      className += " react-select-box-hidden";
+      className += " react-checkboxed-dropdown-hidden";
     }
     return <div className={className} onBlur={() => this.handleBlur()}
                 onFocus={() => this.handleFocus()}
@@ -270,7 +270,7 @@ export default class SelectBox extends Component {
                 ref={ref => this.menu = ref}
                 tabIndex={0}
     >
-      <div className="react-select-box-off-screen">
+      <div className="react-checkboxed-dropdown-off-screen">
         {this.options().map(this.renderOption, this)}
       </div>
       {this.renderCloseButton()}
@@ -278,12 +278,12 @@ export default class SelectBox extends Component {
   }
 
   renderOption(option, i) {
-    let className = "react-select-box-option";
+    let className = "react-checkboxed-dropdown-option";
     if (i === this.state.focusedIndex) {
-      className += " react-select-box-option-focused";
+      className += " react-checkboxed-dropdown-option-focused";
     }
     if (this.isSelected(option.value)) {
-      className += " react-select-box-option-selected";
+      className += " react-checkboxed-dropdown-option-selected";
     }
     return <a href="#" onClick={event => this.handleChange(option.value)(event)}
               onMouseDown={() => this.handleMouseDown()}
@@ -297,37 +297,37 @@ export default class SelectBox extends Component {
 
   renderClearButton() {
     return this.hasValue() ?
-      <button className="react-select-box-clear" onClick={e => this.handleClear(e)}>{this.props.clearText}</button> : "";
+      <button className="react-checkboxed-dropdown-clear" onClick={e => this.handleClear(e)}>{this.props.clearText}</button> : "";
   }
 
   renderCloseButton() {
     return this.isMultiple() && this.props.closeText ?
-      <button className="react-select-box-close" onBlur={() => this.handleBlur()}
+      <button className="react-checkboxed-dropdown-close" onBlur={() => this.handleBlur()}
               onClick={e => this.handleClose(e)}
               onFocus={() => this.handleFocus()}>{this.props.closeText}</button> : "";
   }
 
   render() {
-    let className = "react-select-box-container";
+    let className = "react-checkboxed-dropdown-container";
     if (this.props.className) {
       className += " " + this.props.className;
     }
     if (this.isMultiple()) {
-      className += " react-select-box-multi";
+      className += " react-checkboxed-dropdown-multi";
     }
     if (!this.hasValue()) {
-      className += " react-select-box-empty";
+      className += " react-checkboxed-dropdown-empty";
     }
     const label = this.label();
     const title = this.props.showTitle ? label : "";
     return <div onKeyDown={e => this.handleKey(e)} className={className}>
       <button key={this.state.key} ref={ref => this.button = ref}
-              className="react-select-box"
+              className="react-checkboxed-dropdown"
               onClick={e => this.toggleOpenClose(e)}
               onBlur={() => this.handleBlur()}
               tabIndex={0}
               aria-hidden={true}>
-        <div className="react-select-box-label" title={title}>{label}</div>
+        <div className="react-checkboxed-dropdown-label" title={title}>{label}</div>
       </button>
       {this.renderOptionMenu()}
       {this.renderClearButton()}
@@ -337,14 +337,14 @@ export default class SelectBox extends Component {
 }
 
 SelectBox.propTypes = {
-  className: PropTypes.string,
-  closeText: PropTypes.string,
-  clearText: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
-  children: PropTypes.array.isRequired,
   changeOnClose: PropTypes.bool,
+  children: PropTypes.array.isRequired,
+  className: PropTypes.string,
+  clearText: PropTypes.string,
+  closeText: PropTypes.string,
   label: PropTypes.string,
   multiple: PropTypes.bool,
+  onChange: PropTypes.func.isRequired,
   showTitle: PropTypes.bool,
   value: PropTypes.array
 };
